@@ -1,0 +1,21 @@
+<RelativeLayout
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:custom="http://schemas.android.com/apk/res-auto"
+	android:layout_alignParentTop="true"
+	android:layout_alignParentLeft="true"
+	android:layout_alignParentStart="true"
+
+	android:background="#3c3d3e"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<pa1pal.sendbutton.SendButton
+		android:id="@+id/send_button"
+		android:layout_width="match_parent"
+		android:layout_marginLeft="130dp"
+		android:layout_marginTop="130dp"
+		android:layout_height="match_parent"
+		custom:buttonColor="#ffffff"
+		custom:buttonSide="100dp"
+		/>
+</RelativeLayout>
