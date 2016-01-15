@@ -18,13 +18,14 @@ import android.view.View;
  */
 public class SendButton extends View {
     public int flag = 0;
-    private int mbuttonColor, mbuttonSide, mBorderStrokeWidth, mPlaneStrokeWidth, mPlaneColor;
-    private Paint background, foregraound, two;
+    private int mButtonColor, mButtonSide, mBorderStrokeWidth, mPlaneStrokeWidth, mPlaneColor;
+    private Paint background, foregraound;
     Point a, b, c, d, e;
     Path mPath, mPlanePath;
     Matrix mTranslatePlane;
 
-    public SendButton(Context context, AttributeSet attrs) {
+    public SendButton(Context context, AttributeSet attrs)
+    {
         super(context, attrs);
 
         TypedArray a = context.getTheme().obtainStyledAttributes(
@@ -32,22 +33,18 @@ public class SendButton extends View {
                 R.styleable.SendButton,
                 0, 0);
         try {
-            mbuttonColor = a.getColor(R.styleable.SendButton_buttonColor, Color.BLUE);
-            mbuttonSide = a.getDimensionPixelSize(R.styleable.SendButton_buttonSide, getDimensionInPixel(60));
-            mBorderStrokeWidth = a.getDimensionPixelSize(R.styleable.SendButton_borderStrokeWidth, 5);
+            mButtonColor = a.getColor(R.styleable.SendButton_buttonColor, Color.WHITE);
+            mButtonSide = a.getDimensionPixelSize(R.styleable.SendButton_buttonSide, getDimensionInPixel(200));
+            mBorderStrokeWidth = a.getInteger(R.styleable.SendButton_borderStrokeWidth, 5);
             mPlaneStrokeWidth = a.getInteger(R.styleable.SendButton_planeStrokeWidth, 5);
-            mPlaneColor = a.getColor(R.styleable.SendButton_planeColor, Color.DKGRAY);
-
-
+            mPlaneColor = a.getColor(R.styleable.SendButton_planeColor, getResources().getColor(R.color.orange));
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             a.recycle();
         }
 
-
         init();
-
     }
 
     private void init() {
@@ -56,23 +53,26 @@ public class SendButton extends View {
         background.setStyle(Paint.Style.STROKE);
         foregraound.setStrokeWidth(mPlaneStrokeWidth);
         background.setStrokeWidth(mBorderStrokeWidth);
-        background.setColor(mbuttonColor);
+        background.setColor(mButtonColor);
         mPath = new Path();
         mPlanePath = new Path();
-        a = new Point((mbuttonSide * 10) / 100, (mbuttonSide * 55) / 100);
-        b = new Point((mbuttonSide * 80) / 100, (mbuttonSide * 20) / 100); // x : ( 80% of side, 20% of side)
-        c = new Point((mbuttonSide * 45) / 100, (mbuttonSide * 90) / 100);
-        d = new Point((mbuttonSide * 30) / 100, (mbuttonSide * 70) / 100);
-        e = new Point(mbuttonSide / 2, mbuttonSide / 2);
+        /**
+         * The coordinates position calculated by percentage of button side.
+         */
+        a = new Point((mButtonSide * 10) / 100, (mButtonSide * 55) / 100); // Point a : (10% of mButtonSide, 55% of mButtonSide)
+        b = new Point((mButtonSide * 80) / 100, (mButtonSide * 20) / 100); // Point b : (80% of mButtonSide, 20% of mButtonSide)
+        c = new Point((mButtonSide * 45) / 100, (mButtonSide * 90) / 100); // Point c : (45% of mButtonSide, 90% of mButtonSide)
+        d = new Point((mButtonSide * 30) / 100, (mButtonSide * 70) / 100); // Point d : (30% of mButtonSide, 70% of mButtonSide)
+        e = new Point(mButtonSide / 2, mButtonSide / 2); // Point e : (10% of mButtonSide, 55% of mButtonSide)
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         background.setAlpha(255);
-        mPath.addRoundRect(new RectF(0, 0, mbuttonSide, mbuttonSide), mbuttonSide / 3, mbuttonSide / 3, Path.Direction.CCW);
+        mPath.addRoundRect(new RectF(0, 0, mButtonSide, mButtonSide), mButtonSide / 3, mButtonSide / 3, Path.Direction.CCW);
         canvas.drawPath(mPath, background);
-        foregraound.setStyle(Paint.Style.FILL);
+        foregraound.setStyle(Paint.Style.FILL); // for different color of Fill and Stroke, first painted in Fill style and then Stroke style with different color
         foregraound.setColor(getResources().getColor(R.color.orange));
         setPath();
         canvas.drawPath(mPlanePath, foregraound);
@@ -80,6 +80,7 @@ public class SendButton extends View {
         foregraound.setColor(Color.WHITE);
         canvas.drawPath(mPlanePath, foregraound);
         setPath();
+        translate();
     }
 
     public void setPath() {
@@ -93,6 +94,15 @@ public class SendButton extends View {
         mPlanePath.lineTo(a.x, a.y);
     }
 
+    private void translate() {
+        if (flag < 30) {
+            mTranslatePlane = new Matrix();
+            mTranslatePlane.setTranslate(5, -5);
+            mPlanePath.transform(mTranslatePlane);
+            invalidate();
+            flag++;
+        }
+    }
 
     private int getDimensionInPixel(int dp) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());

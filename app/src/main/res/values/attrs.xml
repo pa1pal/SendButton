@@ -5,9 +5,7 @@
 		<attr name="buttonColor" format="color"/>
 		<attr name="planeColor" format="color"/>
 		<attr name="buttonSide" format="dimension"/>
-		<attr name="borderRadius" format="dimension"/>
 		<attr name="borderStrokeWidth" format="integer"/>
 		<attr name="planeStrokeWidth" format="integer"/>
-
 	</declare-styleable>
 </resources>
