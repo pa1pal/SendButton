@@ -70,8 +70,10 @@ public class SendButton extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         background.setAlpha(255);
+//	    canvas.drawARGB(100, 0, 0, 0);
         mPath.addRoundRect(new RectF(0, 0, mButtonSide, mButtonSide), mButtonSide / 3, mButtonSide / 3, Path.Direction.CCW);
         canvas.drawPath(mPath, background);
+	    canvas.clipPath(mPath);
         foregraound.setStyle(Paint.Style.FILL); // for different color of Fill and Stroke, first painted in Fill style and then Stroke style with different color
         foregraound.setColor(getResources().getColor(R.color.orange));
         setPath();
@@ -79,12 +81,15 @@ public class SendButton extends View {
         foregraound.setStyle(Paint.Style.STROKE);
         foregraound.setColor(Color.WHITE);
         canvas.drawPath(mPlanePath, foregraound);
-        setPath();
+
         translate();
+	    setPath();
     }
 
     public void setPath() {
-        mPlanePath.moveTo(a.x, a.y); //Set the starting point to A
+	    mPlanePath = new Path();
+
+	    mPlanePath.moveTo(a.x, a.y); //Set the starting point to A
         mPlanePath.lineTo(a.x, a.y);
         mPlanePath.lineTo(b.x, b.y);
         mPlanePath.lineTo(c.x, c.y);
@@ -95,10 +100,24 @@ public class SendButton extends View {
     }
 
     private void translate() {
-        if (flag < 30) {
-            mTranslatePlane = new Matrix();
+        if (flag < 150) {
+/*            mTranslatePlane = new Matrix();
             mTranslatePlane.setTranslate(5, -5);
-            mPlanePath.transform(mTranslatePlane);
+            mPlanePath.transform(mTranslatePlane);*/
+
+	        int change = (int)Math.ceil(Math.cos(((double)flag/300.0)*Math.PI)*4);
+
+	        a.x+=change;
+	        a.y-=change;
+	        b.x+=change;
+	        b.y-=change;
+	        c.x+=change;
+	        c.y-=change;
+	        d.x+=change;
+	        d.y-=change;
+	        e.x+=change;
+	        e.y-=change;
+
             invalidate();
             flag++;
         }
