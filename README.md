@@ -1,6 +1,9 @@
 # SendButton
+[![Build Status](https://travis-ci.org/pa1pal/SendButton.svg?branch=master)](https://travis-ci.org/pa1pal/SendButton)
+
 Send Button Custom View for chatting application. 
 The custom view developed by drawing path over the coordinates of the figure. And the animation done by continously changing the coordinates in one direction.
+
 ![Phone Screenshot](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/phone_gif.gif)
 ![Dribble GIF](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/dribbble_gif.gif)
 
