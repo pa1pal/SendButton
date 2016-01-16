@@ -1,6 +1,9 @@
 # SendButton
 A custom send button for chatting application. 
 
+
+![](https://github.com/hanks-zyh/HTextView/blob/master/screenshot/demo3.gif)
+
 This repository is the demo of the original idea by Kirill Semushin on Dribbble : https://dribbble.com/shots/2446891-Send-Button 
 
 
