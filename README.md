@@ -1,8 +1,8 @@
 # SendButton
 Send Button Custom View for chatting application. 
 The custom view developed by drawing path over the coordinates of the figure. And the animation done by continously changing the coordinates in one direction.
-![Phone Screenshot](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Send_Button_phone.gif)
-![Dribble GIF](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/send_button.gif)
+![Phone Screenshot](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/phone_gif.gif)
+![Dribble GIF](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/dribbble_gif.gif)
 
 This repository is the demo of the original idea by Kirill Semushin on Dribbble : https://dribbble.com/shots/2446891-Send-Button 
 
