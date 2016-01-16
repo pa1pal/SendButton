@@ -19,7 +19,7 @@ import android.view.View;
 public class SendButton extends View {
     public int flag = 0;
     private int mButtonColor, mButtonSide, mBorderStrokeWidth, mPlaneStrokeWidth, mPlaneColor;
-    private Paint background, foregraound;
+    private Paint background, foreground;
     Point a, b, c, d, e;
     Path mPath, mPlanePath;
     Matrix mTranslatePlane;
@@ -34,7 +34,7 @@ public class SendButton extends View {
                 0, 0);
         try {
             mButtonColor = a.getColor(R.styleable.SendButton_buttonColor, Color.WHITE);
-            mButtonSide = a.getDimensionPixelSize(R.styleable.SendButton_buttonSide, getDimensionInPixel(200));
+            mButtonSide = a.getDimensionPixelSize(R.styleable.SendButton_buttonSide, 200);
             mBorderStrokeWidth = a.getInteger(R.styleable.SendButton_borderStrokeWidth, 5);
             mPlaneStrokeWidth = a.getInteger(R.styleable.SendButton_planeStrokeWidth, 5);
             mPlaneColor = a.getColor(R.styleable.SendButton_planeColor, getResources().getColor(R.color.orange));
@@ -49,9 +49,9 @@ public class SendButton extends View {
 
     private void init() {
         background = new Paint(Paint.ANTI_ALIAS_FLAG);
-        foregraound = new Paint(Paint.ANTI_ALIAS_FLAG);
+        foreground = new Paint(Paint.ANTI_ALIAS_FLAG);
         background.setStyle(Paint.Style.STROKE);
-        foregraound.setStrokeWidth(mPlaneStrokeWidth);
+        foreground.setStrokeWidth(mPlaneStrokeWidth);
         background.setStrokeWidth(mBorderStrokeWidth);
         background.setColor(mButtonColor);
         mPath = new Path();
@@ -70,17 +70,18 @@ public class SendButton extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         background.setAlpha(255);
-//	    canvas.drawARGB(100, 0, 0, 0);
         mPath.addRoundRect(new RectF(0, 0, mButtonSide, mButtonSide), mButtonSide / 3, mButtonSide / 3, Path.Direction.CCW);
         canvas.drawPath(mPath, background);
 	    canvas.clipPath(mPath);
-        foregraound.setStyle(Paint.Style.FILL); // for different color of Fill and Stroke, first painted in Fill style and then Stroke style with different color
-        foregraound.setColor(getResources().getColor(R.color.orange));
+        foreground.setStyle(Paint.Style.FILL); // for different color of Fill and Stroke, first painted in Fill style and then Stroke style with different color
+        foreground.setColor(getResources().getColor(R.color.orange));
+        foreground.setAlpha(255- (flag*25)/10);
         setPath();
-        canvas.drawPath(mPlanePath, foregraound);
-        foregraound.setStyle(Paint.Style.STROKE);
-        foregraound.setColor(Color.WHITE);
-        canvas.drawPath(mPlanePath, foregraound);
+        canvas.drawPath(mPlanePath, foreground);
+        foreground.setStyle(Paint.Style.STROKE);
+        foreground.setColor(Color.WHITE);
+        foreground.setAlpha(255- (flag*25)/10);
+        canvas.drawPath(mPlanePath, foreground);
 
         translate();
 	    setPath();
@@ -101,29 +102,22 @@ public class SendButton extends View {
 
     private void translate() {
         if (flag < 150) {
-/*            mTranslatePlane = new Matrix();
-            mTranslatePlane.setTranslate(5, -5);
-            mPlanePath.transform(mTranslatePlane);*/
+            int change = (int)Math.ceil(Math.cos(((double)flag/350.0)*Math.PI)*4);
 
-	        int change = (int)Math.ceil(Math.cos(((double)flag/300.0)*Math.PI)*4);
-
-	        a.x+=change;
-	        a.y-=change;
-	        b.x+=change;
-	        b.y-=change;
-	        c.x+=change;
-	        c.y-=change;
-	        d.x+=change;
-	        d.y-=change;
-	        e.x+=change;
-	        e.y-=change;
+	        a.x+=change;a.y-=change;
+	        b.x+=change;b.y-=change;
+	        c.x+=change;c.y-=change;
+	        d.x+=change;d.y-=change;
+	        e.x+=change;e.y-=change;
 
             invalidate();
             flag++;
         }
+        else {
+            flag = 0;
+            init();
+            invalidate();
+        }
     }
 
-    private int getDimensionInPixel(int dp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
-    }
 }
