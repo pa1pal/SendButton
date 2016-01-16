@@ -1,6 +1,10 @@
 # SendButton
 A custom send button for chatting application. 
 
+
+![Phone Screenshot](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Send_Button_phone.gif)
+![Dribble GIF](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/send_button.gif)
+
 This repository is the demo of the original idea by Kirill Semushin on Dribbble : https://dribbble.com/shots/2446891-Send-Button 
 
 
