@@ -1,12 +1,12 @@
 # SendButton
-A custom send button for chatting application. 
-
+Send Button Custom View for chatting application. 
+The custom view developed by drawing path over the coordinates of the figure. And the animation done by continously changing the coordinates in one direction.
 ![Phone Screenshot](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Send_Button_phone.gif)
 ![Dribble GIF](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/send_button.gif)
 
 This repository is the demo of the original idea by Kirill Semushin on Dribbble : https://dribbble.com/shots/2446891-Send-Button 
 
-#Demo
+# Demo
 Demo apk is available in [Releases](https://github.com/pa1pal/SendButton/releases)
 
 # Usage
@@ -27,7 +27,22 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
         />
 ```
 
-The MIT License (MIT)
+# Customization
+## Attributes
+```xml
+* Button Color          format="color" 
+* Plane Color           format="color"
+* ButtonSide            format="dimension"
+* Border Stroke Width   format="integer"
+* Plane Stroke Width    format="integer"
+```
+### Examples
+![](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Screenshots/sb1.png)
+![](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Screenshots/sb2.png)
+![](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Screenshots/sb3.png)
+![](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Screenshots/sb4.png)
+
+The MIT License
 ===============
 
 Copyright (c) [2016] [Pawan Pal, Devesh Khandelwal]

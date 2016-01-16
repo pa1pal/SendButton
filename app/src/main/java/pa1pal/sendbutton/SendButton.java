@@ -74,7 +74,7 @@ public class SendButton extends View {
         canvas.drawPath(mPath, background);
 	    canvas.clipPath(mPath);
         foreground.setStyle(Paint.Style.FILL); // for different color of Fill and Stroke, first painted in Fill style and then Stroke style with different color
-        foreground.setColor(getResources().getColor(R.color.orange));
+        foreground.setColor(mPlaneColor);
         foreground.setAlpha(255- (flag*25)/10);
         setPath();
         canvas.drawPath(mPlanePath, foreground);
