@@ -13,8 +13,6 @@
 		app:buttonColor="@color/white"
         app:planeColor="@color/orange"
 		app:buttonSide="200dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="60dp"
         app:borderStrokeWidth="5"
         app:planeStrokeWidth="5" />
 </RelativeLayout>

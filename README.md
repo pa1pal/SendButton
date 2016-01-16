@@ -6,6 +6,8 @@ A custom send button for chatting application.
 
 This repository is the demo of the original idea by Kirill Semushin on Dribbble : https://dribbble.com/shots/2446891-Send-Button 
 
+#Demo
+Demo apk is available in [Releases](https://github.com/pa1pal/SendButton/releases)
 
 # Usage
 ```xml
