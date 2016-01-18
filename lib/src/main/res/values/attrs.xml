@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<declare-styleable name="SendButton">
+		<attr name="buttonColor" format="color"/>
+		<attr name="planeColor" format="color"/>
+		<attr name="buttonSide" format="dimension"/>
+		<attr name="borderStrokeWidth" format="integer"/>
+		<attr name="planeStrokeWidth" format="integer"/>
+		<attr name="animationType" format="enum">
+			<enum name="Linear" value="0"/>
+			<enum name="Anticipate" value="1"/>
+			<enum name="AnticipateOvershoot" value="2"/>
+			<enum name="Accelerate" value="3"/>
+			<enum name="AccelerateDecelerate" value="4"/>
+			<enum name="Bounce" value="5"/>
+			<enum name="Decelerate" value="6"/>
+			<enum name="FastOutLinearIn" value="7"/>
+			<enum name="FastOutSlowIn" value="8"/>
+			<enum name="LinearOutSlowIn" value="9"/>
+			<enum name="Overshoot" value="10"/>
+		</attr>
+		<attr name="duration" format="integer"/>
+	</declare-styleable>
+</resources>

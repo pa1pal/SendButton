@@ -5,10 +5,12 @@ import android.os.Bundle;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import pa1pal.sendbutton.lib.*;
 
 public class MainActivity extends AppCompatActivity
 {
-	@Bind(R.id.send_button) SendButton send_button;
+	@Bind(R.id.send_button)
+	pa1pal.sendbutton.lib.SendButton send_button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)

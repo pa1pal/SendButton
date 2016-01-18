@@ -1,12 +1,11 @@
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:background="@color/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	>
+    android:layout_height="match_parent">
 
-	<pa1pal.sendbutton.SendButton
+	<pa1pal.sendbutton.lib.SendButton
 		android:id="@+id/send_button"
         android:layout_height="wrap_content"
 		android:layout_width="wrap_content"
@@ -14,5 +13,8 @@
         app:planeColor="@color/orange"
 		app:buttonSide="200dp"
         app:borderStrokeWidth="5"
-        app:planeStrokeWidth="5" />
-</RelativeLayout>
+        app:planeStrokeWidth="5"
+		app:animationType="Accelerate"
+		app:duration="2000"/>
+
+</LinearLayout>
