@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Sendbutton by pa1pal</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Sendbutton</h1>
+          <h2>Send Button Custom View for chatting application. </h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/pa1pal/SendButton/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/pa1pal/SendButton/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/pa1pal/SendButton" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="sendbutton" class="anchor" href="#sendbutton" aria-hidden="true"><span class="octicon octicon-link"></span></a>SendButton</h1>
+
+<p><a href="https://travis-ci.org/pa1pal/SendButton"><img src="https://travis-ci.org/pa1pal/SendButton.svg?branch=master" alt="Build Status"></a></p>
+
+<p>Send Button Custom View for chatting application. 
+The custom view developed by drawing path over the coordinates of the figure. And the animation done by continously changing the coordinates in one direction.</p>
+
+<p><img src="https://raw.githubusercontent.com/pa1pal/SendButton/master/app/phone_gif.gif" alt="Phone Screenshot">
+<img src="https://raw.githubusercontent.com/pa1pal/SendButton/master/app/dribbble_gif.gif" alt="Dribble GIF"></p>
+
+<p>This repository is the demo of the original idea by Kirill Semushin on Dribbble : <a href="https://dribbble.com/shots/2446891-Send-Button">https://dribbble.com/shots/2446891-Send-Button</a> </p>
+
+<h1>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
+
+<p>Demo apk is available in <a href="https://github.com/pa1pal/SendButton/releases">Releases</a></p>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<div class="highlight highlight-text-xml"><pre>xmlns:app="http://schemas.android.com/apk/res-auto"</pre></div>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">pa1pal</span>.sendbutton.SendButton
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>@+id/send_button<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s"><span class="pl-pds">"</span>wrap_content<span class="pl-pds">"</span></span>
+        <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s"><span class="pl-pds">"</span>wrap_content<span class="pl-pds">"</span></span>
+        <span class="pl-e">app</span><span class="pl-e">:</span><span class="pl-e">buttonColor</span>=<span class="pl-s"><span class="pl-pds">"</span>@color/white<span class="pl-pds">"</span></span>
+        <span class="pl-e">app</span><span class="pl-e">:</span><span class="pl-e">planeColor</span>=<span class="pl-s"><span class="pl-pds">"</span>@color/orange<span class="pl-pds">"</span></span>
+        <span class="pl-e">app</span><span class="pl-e">:</span><span class="pl-e">buttonSide</span>=<span class="pl-s"><span class="pl-pds">"</span>200dp<span class="pl-pds">"</span></span>
+        <span class="pl-e">app</span><span class="pl-e">:</span><span class="pl-e">borderStrokeWidth</span>=<span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span>
+        <span class="pl-e">app</span><span class="pl-e">:</span><span class="pl-e">planeStrokeWidth</span>=<span class="pl-s"><span class="pl-pds">"</span>5<span class="pl-pds">"</span></span>
+        /&gt;</pre></div>
+
+<h1>
+<a id="customization" class="anchor" href="#customization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Customization</h1>
+
+<h2>
+<a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h2>
+
+<div class="highlight highlight-text-xml"><pre>* Button Color          format="color" 
+* Plane Color           format="color"
+* ButtonSide            format="dimension"
+* Border Stroke Width   format="integer"
+* Plane Stroke Width    format="integer"</pre></div>
+
+<h1>
+<a id="the-mit-license" class="anchor" href="#the-mit-license" aria-hidden="true"><span class="octicon octicon-link"></span></a>The MIT License</h1>
+
+<p>Copyright (c) [2016] [Pawan Pal, Devesh Khandelwal]</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+        </section>
+
+        <footer>
+          Sendbutton is maintained by <a href="https://github.com/pa1pal">pa1pal</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
