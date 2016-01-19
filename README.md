@@ -1,5 +1,5 @@
 # SendButton
-[![Build Status](https://travis-ci.org/pa1pal/SendButton.svg?branch=master)](https://travis-ci.org/pa1pal/SendButton)
+[![Build Status](https://travis-ci.org/pa1pal/SendButton.svg?branch=master)](https://travis-ci.org/pa1pal/SendButton)   [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SendButton-green.svg?style=true)](https://android-arsenal.com/details/1/3039)
 
 Send Button Custom View for chatting application. 
 The custom view developed by drawing path over the coordinates of the figure. And the animation done by continously changing the coordinates in one direction.
@@ -14,6 +14,14 @@ Demo apk is available in [Releases](https://github.com/pa1pal/SendButton/release
 
 # Usage
 
+Installation via gradle:
+```java
+repositories {
+    maven {
+        url  "http://dl.bintray.com/pa1pal/SendButton" 
+    }
+}
+```
 ```xml
 xmlns:app="http://schemas.android.com/apk/res-auto"
 ```
