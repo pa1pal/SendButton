@@ -14,12 +14,10 @@ Demo apk is available in [Releases](https://github.com/pa1pal/SendButton/release
 
 # Usage
 
-Installation via gradle:
-```java
-repositories {
-    maven {
-        url  "http://dl.bintray.com/pa1pal/SendButton" 
-    }
+Add dependency 
+```gradle
+dependencies {
+    compile 'pa1pal.sendbutton.lib:lib:1.0'
 }
 ```
 ```xml
@@ -47,6 +45,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 * ButtonSide            format="dimension"
 * Border Stroke Width   format="integer"
 * Plane Stroke Width    format="integer"
+* Animation type        format="enum"
+* Duration              format="integer"
 ```
 ### Examples
 ![](https://raw.githubusercontent.com/pa1pal/SendButton/master/app/Screenshots/sb1.png)
