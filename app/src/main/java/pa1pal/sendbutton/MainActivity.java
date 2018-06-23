@@ -1,15 +1,14 @@
 package pa1pal.sendbutton;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import pa1pal.sendbutton.lib.*;
 
 public class MainActivity extends AppCompatActivity
 {
-	@Bind(R.id.send_button)
+	@BindView(R.id.send_button)
 	pa1pal.sendbutton.lib.SendButton send_button;
 
 	@Override
